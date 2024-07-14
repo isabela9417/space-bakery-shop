@@ -1,12 +1,5 @@
 <?php
-
-    $conn = new mysqli('localhost', 'Isabela94', '+BlackWidow94', 'space_shop');
-
-    //check the DB connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-
+    include('template/config.php');
     //Getting all the muffins
     $sql = 'SELECT title, ingredients, id FROM muffins ORDER BY created_at';
 
@@ -21,6 +14,10 @@
      
     //now we closing the connection
     mysqli_close($conn);
+
+
+    // spliting the ingredients in to a list
+    
     
 ?>
 
@@ -29,12 +26,16 @@
  <?php include('template/header.php') ?>
     <h4 class='center grey-text'>Muffins!</h4>
     <div class='row'>
-        <?php foreach ($muffins as $muffin) { ?>
+        <?php foreach ($muffins as $muffin): ?>
             <div class="col s6 md3">
                 <div class="card z-depth-0">
                     <div class="card-content center">
-                        <h6><?php echo htmlspecialchars($muffins['title']) ?></h6>
-                        <div><?php echo htmlspecialchars($muffins['ingredients']) ?></div>
+                        <h6><?php echo htmlspecialchars($muffin['title']); ?></h6>
+                        <ul>
+                            <?php foreach(explode(',', $muffin['ingredients']) as $ingrid): ?>
+                                <li><?php echo htmlspecialchars($ingrid); ?></li>
+                            <?php endforeach; ?>
+                        </ul>
                     </div>
                     <div class="card-action right-align">
                         <a class="band-text" href="#">More info</a>
@@ -42,7 +43,8 @@
                 </div>
             </div>
             
-        <?php } ?>
+        <?php endforeach; ?>
+
 
     </div>
 
