@@ -38,7 +38,7 @@
                         </ul>
                     </div>
                     <div class="card-action right-align">
-                        <a class="band-text" href="#">More info</a>
+                        <a class="band-text" href="template/details.php?id=<?php echo $muffin['id']?>">More info</a>
                     </div>
                 </div>
             </div>
