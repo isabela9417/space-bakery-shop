@@ -29,6 +29,7 @@
         <?php foreach ($muffins as $muffin): ?>
             <div class="col s6 md3">
                 <div class="card z-depth-0">
+                     <img src="image/muffin1.jpg" class="muffin">
                     <div class="card-content center">
                         <h6><?php echo htmlspecialchars($muffin['title']); ?></h6>
                         <ul>
@@ -38,8 +39,9 @@
                         </ul>
                     </div>
                     <div class="card-action right-align">
-                        <a class="band-text" href="template/details.php?id=<?php echo $muffin['id']?>">More info</a>
+                        <a class="band-text" href="<?php echo BASE_URL; ?>/template/details.php?id=<?php echo $muffin['id']; ?>">More info</a>
                     </div>
+
                 </div>
             </div>
             

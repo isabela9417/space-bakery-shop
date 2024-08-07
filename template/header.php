@@ -15,15 +15,23 @@
 			margin: 20px auto;
 			padding: 20px;
 		}
+		.muffin{
+			width: 100px;
+			margin: 40px auto -30px;
+			display: block;
+			position: relative;
+			/*top: -30px;*/
+		}
 	</style>
 </head>
+<?php include 'config.php'; ?>
 
 <body class="grey lighten-4">
 	<nav class="white z-depth-0">
 		<div class=container>
-			<a href="#" class="brand-logo brand-text"> Bellah Space Bakery</a>
+			<a href="<?php echo BASE_URL; ?>index.php" class="brand-logo brand-text"> Bellah Space Bakery</a>
 				<ul id="nav-mobile" class="right hide-on-small-and-down">
-					<li><a href="template/add.php" class="btn brand z-depth-0">Add Product</a></li>	
+					<li><a href="<?php echo BASE_URL; ?>template/add.php" class="btn brand z-depth-0">Add Product</a></li>	
 				</ul>
 		</div>
 	</nav>

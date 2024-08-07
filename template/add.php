@@ -53,7 +53,8 @@
 			// save to the database
 			if(mysqli_query($conn, $sql)){
 				//success
-				header('location: ../index.php');
+				header('Location: ' . BASE_URL . 'index.php');
+				exit();
 			}else{
 				//error
 				echo 'query error: ' . mysqli_error($conn);

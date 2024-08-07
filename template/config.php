@@ -7,4 +7,9 @@
         die("Connection failed: " . $conn->connect_error);
     }
 
+    //defining the base URLs
+	if (!defined('BASE_URL')) {
+    	define('BASE_URL', '/space-bakery-shop/');
+	}
+
 ?>
